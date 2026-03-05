@@ -20,5 +20,5 @@ run: |
 $src = "${env:GITHUB_WORKSPACE}\*" #sets the source to be the current Github repository.
 $dst = "C:\inetpub\wwwroot\"   #sets the destination to be the website folder. 
 
-New-item -ItemType Directory -Force -Path "dst | Out-Null #Ensures the iis folder exists. 
+New-item -ItemType Directory -Force -Path $dst | Out-Null #Ensures the iis folder exists. 
 Copy-Item -Path $src -Destination $dst -Recurse -Force #Copies repository across the IIS folder.
